@@ -118,4 +118,39 @@ body {
     margin-top: 10px;
   }
 
+  .slide-from-top {
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: all 1s ease-out;
+  }
+  
+  .slide-from-top.active {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  /* Animation for text (left side) */
+.slide-from-left {
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: all 1s ease-out 0.5s;
+}
+
+.slide-from-left.active {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* Animation for image (right side) */
+.slide-from-right {
+  transform: translateX(100%);
+  opacity: 0;
+  transition: all 1s ease-out 0.5s;
+}
+
+.slide-from-right.active {
+  transform: translateX(0);
+  opacity: 1;
+}
+
   

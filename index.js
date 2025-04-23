@@ -31,3 +31,9 @@ face.addEventListener("mouseleave", () => {
   designer.style.opacity = 1;
   faceImg.src = defaultImg;
 });
+
+window.addEventListener("load", () => {
+  document.querySelector(".navbar").classList.add("active");
+  document.querySelector(".slide-from-left").classList.add("active");
+  document.querySelector(".slide-from-right").classList.add("active");
+});
