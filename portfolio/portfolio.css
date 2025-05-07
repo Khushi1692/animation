@@ -160,3 +160,35 @@ body {
 
   .dahoo{ height: 350px; width: 300px;}
   .print{ height: 350px; width: 250px;}
+
+  .portfolio-hero-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    animation: floatIn 1.2s ease-out forwards;
+  }
+  
+  .portfolio-hero-img img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+  }
+  
+  .portfolio-hero-img img:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Subtle image float-in animation */
+  @keyframes floatIn {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
