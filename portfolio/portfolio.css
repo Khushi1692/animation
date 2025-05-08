@@ -1,194 +1,283 @@
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #fff;
-  }
-  
-  .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #111;
-    padding: 10px 30px;
-    color: white;
-  }
-  
-  .logo img {
-    height: 40px;
-    width: auto;
-    border-radius: 50%;
-    background-color: white;
-  }
-  
-  .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 30px;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .nav-links li a {
-    text-decoration: none;
-    color: white;
-    font-size: 20px;
-    transition: color 0.3s ease;
-  }
-  
-  .nav-links li a:hover {
-    color: #999;
-  }
-  
-  .social-icons a {
-    color: white;
-    margin-left: 30px;
-    font-size: 25px;
-    transition: color 0.3s ease;
-  }
-  
-  .social-icons a:hover {
-    color: #999;
-  }
-  .container {
-    width: 100%;
-    box-sizing: border-box;
-  }
-  
-  .row {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    padding: 20px 30px;
-    justify-content: center;
-    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
-  }
-  .col-5 {
-    flex: 0 0 45%;
-    max-width: 45%;
-  }
-  
-  .col-7 {
-    flex: 0 0 55%;
-    max-width: 55%;
-  }
-  
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fff;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #111;
+  padding: 10px 30px;
+  color: white;
+}
+
+.logo img {
+  height: 40px;
+  width: auto;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #999;
+}
+
+.social-icons a {
+  color: white;
+  margin-left: 30px;
+  font-size: 25px;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #999;
+}
+
+.container {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 20px 30px;
+  justify-content: center;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.col-5 {
+  flex: 0 0 45%;
+  max-width: 45%;
+}
+
+.col-7 {
+  flex: 0 0 55%;
+  max-width: 55%;
+}
+
 .text-main h1 {
-    font-size: 5rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: #222;
-  }
+  font-size: 5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  /* background: linear-gradient(90deg, #24aca4, #a8bc8b); */
+  color: #222;
   
-  .text-main .intro {
-    font-size: 1.5rem;
-    color: #666;
-    margin-bottom: 20px;
-  }
-  
-  .text-main .description {
-    font-size: 1.2rem;
-    color: #444;
-  }
+}
 
-  .portfolio-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 30px;
-  }
+.text-main .intro {
+  font-size: 1.5rem;
+  color: #666;
+  margin-bottom: 20px;
+}
 
-  .portfolio-card {
-    width: 400px;
-    height: 500px;
-    color: #fff;
-    text-align: center;
-    border-radius: 10px;
-    position: relative;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-  }
+.text-main .description {
+  font-size: 1.2rem;
+  color: #444;
+}
 
-  .portfolio-card:hover {
-    transform: scale(1.05);
-  }
+.portfolio-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px;
+}
 
-  .card-number {
-    position: absolute;
-    bottom: 10px;
-    right: 5px;
-    font-size: 100px;
-    font-weight: bold;
-    opacity: 0.15;
-  }
+.portfolio-card {
+  width: 400px;
+  height: 500px;
+  color: #fff;
+  text-align: center;
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  text-decoration: none;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
 
-  .card-image {
-    position: absolute;
-    top: 40px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 180px;
-    height: auto;
-  }
+.portfolio-card:hover {
+  transform: scale(1.05);
+}
 
-  .card-content {
-    position: relative;
-    padding: 30px 20px;
-    z-index: 1;
-    
-  }
+.card-number {
+  position: absolute;
+  bottom: 10px;
+  right: 5px;
+  font-size: 100px;
+  font-weight: bold;
+  opacity: 0.15;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
 
-  .card-content h3 {
-    margin: 10px 0 5px;
-  }
+.portfolio-card:hover .card-number {
+  opacity: 0.3;
+  transform: scale(1.1);
+}
 
-  .card-content p {
-    font-size: 14px;
-  }
+.card-image {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 180px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
 
-  /* Individual card colors */
-  .blue { background-color: #24aca4; }
-  .beige { background-color: #C7B3F8; }
-  .green { background-color: #a8bc8b; color: #222; }
-  .red { background-color: #e76f51; }
-  .purple { background-color: #7d8cc4; }
+.portfolio-card:hover .card-image {
+  transform: translateX(-50%) scale(1.05);
+}
 
-  .dahoo{ height: 350px; width: 300px;}
-  .print{ height: 350px; width: 250px;}
+.card-content {
+  position: relative;
+  padding: 30px 20px;
+  z-index: 1;
+}
 
-  .portfolio-hero-img {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    animation: floatIn 1.2s ease-out forwards;
+.card-content h2 {
+  margin: 10px 0 5px;
+  font-size: 1.5rem;
+}
+
+.card-content p {
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.card-content .learn-more {
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 8px 15px;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.card-content .learn-more:hover {
+  background-color: #fff;
+  color: #111;
+}
+
+/* Individual card colors with gradients */
+.blue {
+  background: linear-gradient(135deg, #24aca4, #1e7e78);
+}
+
+.beige {
+  background: linear-gradient(135deg, #C7B3F8, #9e87f8);
+}
+
+.green {
+  background: linear-gradient(135deg, #a8bc8b, #6d8f5d);
+}
+
+/* Custom image sizing */
+.dahoo {
+  height: 300px;
+  width: 300px;
+}
+
+.print {
+  height: 300px;
+  width: 300px;
+}
+
+.chai {
+  height: 300px;
+  width: 300px;
+}
+
+.portfolio-hero-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: floatIn 1.2s ease-out forwards;
+}
+
+.portfolio-hero-img img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.portfolio-hero-img img:hover {
+  transform: scale(1.05);
+}
+
+/* Subtle image float-in animation */
+@keyframes floatIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
   }
-  
-  .portfolio-hero-img img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 20px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .portfolio-hero-img img:hover {
-    transform: scale(1.05);
-  }
-  
-  /* Subtle image float-in animation */
-  @keyframes floatIn {
-    0% {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
+}
+
+.slide-from-top {
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: all 1s ease-out;
+}
+
+.slide-from-top.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.slide-from-left {
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: all 1s ease-out 0.5s;
+}
+
+.slide-from-left.active {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.slide-from-right {
+  transform: translateX(100%);
+  opacity: 0;
+  transition: all 1s ease-out 0.5s;
+}
+
+.slide-from-right.active {
+  transform: translateX(0);
+  opacity: 1;
+}
