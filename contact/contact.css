@@ -136,3 +136,66 @@ body {
     transform: scale(1.2);
   }
   
+ 
+
+  
+  section.dark {
+    background-color: #e7e7e7;
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+  }
+  .dark h2{
+    margin-bottom: 1.6rem;    
+    color: #333333;
+    padding-top: 40px;
+    padding-right: 30px;
+  }
+  #contact-form {
+    
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    width: 100%;
+    max-width: 900px;
+    
+  }
+  
+  #contact-form input,
+  #contact-form textarea {
+    padding: 14px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  #message {
+    grid-column: 2;
+    grid-row: 1 / span 3;
+    resize: vertical;
+    min-height: 120px;
+  }
+  
+  #contact-form button {
+    grid-column: 2;
+    justify-self: end;
+    padding: 12px 24px;
+    background-color: #333;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  #contact-form button:hover {
+    background-color: #555;
+  }
+  
+
+  
+
+
