@@ -59,7 +59,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    padding: 20px 30px;
+    padding: 20px 80px;
     justify-content: center;
     box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
   }
@@ -100,44 +100,56 @@ body {
   .social-disc {
     list-style: none;
     padding: 0;
-    margin: 20px 0;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 40px 30px;
+   
   }
   
-  .social-disc li {
-    margin: 15px 0;
-  }
-  
-  .social-disc a {
-    display: inline-flex;
+  .social-disc li a {
+    display: flex;
     align-items: center;
-    gap: 10px;
     text-decoration: none;
-    font-size: 1.3rem;
-    color: #333;
-    padding: 10px 20px;
-    border-radius: 30px;
-    transition: all 0.4s ease;
-    background-color: #f0f0f0;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    font-weight: bold;
+    color: #000;
+    transition: all 0.3s ease;
   }
   
-  .social-disc a i {
-    font-size: 1.5rem;
-    transition: transform 0.4s ease;
+  .social-disc li a i {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    font-size: 30px;
+    color: white;
+    transition: transform 0.3s ease;
   }
   
-  .social-disc a:hover {
-    background-color: #222;
-    color: #fff;
-    transform: translateX(10px);
+  /* Brand colors */
+  .twitter i {
+    background-color: #1da1f2;
   }
   
-  .social-disc a:hover i {
+  .facebook i {
+    background-color: #3b5998;
+  }
+  
+  .linkedin i {
+    background-color: #0077b5;
+  }
+  
+  .instagram i {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  }
+  
+  
+  /* Hover effect */
+  .social-disc li a:hover i {
     transform: scale(1.2);
   }
-  
- 
-
   
   section.dark {
     background-color: #e7e7e7;
@@ -195,6 +207,39 @@ body {
     background-color: #555;
   }
   
+/* Animations */
+.slide-from-top {
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: all 1s ease-out;
+}
+
+.slide-from-top.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.slide-from-left {
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: all 1s ease-out 0.5s;
+}
+
+.slide-from-left.active {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.slide-from-right {
+  transform: translateX(100%);
+  opacity: 0;
+  transition: all 1s ease-out 0.5s;
+}
+
+.slide-from-right.active {
+  transform: translateX(0);
+  opacity: 1;
+}
 
   
 
