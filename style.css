@@ -1,135 +1,155 @@
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #fff;
-  }
-  
-  .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #111;
-    padding: 10px 30px;
-    color: white;
-  }
-  
-  .logo img {
-    height: 40px;
-    width: auto;
-    border-radius: 50%;
-    background-color: white;
-  }
-  
-  .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 30px;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .nav-links li a {
-    text-decoration: none;
-    color: white;
-    font-size: 20px;
-    transition: color 0.3s ease;
-  }
-  
-  .nav-links li a:hover {
-    color: #999;
-  }
-  
-  .social-icons a {
-    color: white;
-    margin-left: 30px; 
-    font-size: 25px; 
-    transition: color 0.3s ease;
-    gap:30px
-  }
-  
-  .social-icons a:hover {
-    color: #999;
-  }
-  
-  .face {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: #fff;
-    overflow: hidden;
-  }
-  .face-img {
-    position: absolute;
-    height: 100%;
-    width: auto;
+/* General Reset & Scrollbar Fix */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fff;
+  overflow: hidden;       /* Hide both horizontal and vertical scrollbars */
+  max-width: 100%;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #111;
+  padding: 10px 30px;
+  color: white;
+}
+
+.logo img {
+  height: 40px;
+  width: auto;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #999;
+}
+
+.social-icons a {
+  color: white;
+  margin-left: 30px;
+  font-size: 25px;
+  transition: color 0.3s ease;
+  gap: 30px;
+}
+
+.social-icons a:hover {
+  color: #999;
+}
+
+/* Face Section */
+.face {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #fff;
+  overflow: hidden;
+}
+
+.face-img {
+  position: absolute;
+  height: 100%;
+  width: auto;
   object-fit: cover;
-    z-index: 2;
-    transition: opacity 0.5s ease;
-  }
-  .designer,
-  .coder {
-    position: absolute;
-    top: 0;
-    width: 50%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 3;
-    text-align: center;
-    transition: opacity 0.3s ease;
-  }
-  .designer {
-    left: 0;
-  
-    background-color: transparent;
-  }
-  
-  .coder {
-    right: 0;
-    background-color: transparent;
-    
-  }
-  
-  .description {
-    max-width: 300px;
-  }
-  .designer h1 {
-    font-size: 48px;
-    color: #333;
-  }
-  
-  .coder h1 {
-    font-size: 48px;
-    color: #333;
-  }
-  .chevron-left,
-  .chevron-right {
-    color: #333;
-    font-weight: bold;
-  }
-  
-  .description p {
-    font-size: 16px;
-    color: #777;
-    margin-top: 10px;
-  }
+  z-index: 2;
+  transition: opacity 0.5s ease;
+}
 
-  .slide-from-top {
-    transform: translateY(-100%);
-    opacity: 0;
-    transition: all 1s ease-out;
-  }
-  
-  .slide-from-top.active {
-    transform: translateY(0);
-    opacity: 1;
-  }
+.designer,
+.coder {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  text-align: center;
+  transition: opacity 0.3s ease;
+ 
+ 
+}
 
-  /* Animation for text (left side) */
+.designer {
+  left: 0;
+  background-color: transparent;
+  
+}
+
+.coder {
+  right: 0;
+  background-color: transparent;
+}
+.coder .description {
+  margin-left: 80px;  /* Increase space from the face image */
+}
+
+.designer .description {
+  margin-right: 80px;  /* Optional: for symmetry */
+}
+
+.description {
+  max-width: 300px;
+}
+
+.designer h1,
+.coder h1 {
+  font-size: 48px;
+  color: #333;
+}
+
+.description p {
+  font-size: 16px;
+  color: #777;
+  margin-top: 10px;
+}
+
+/* Arrows */
+.chevron-left,
+.chevron-right {
+  color: #333;
+  font-weight: bold;
+}
+
+/* Animation for Top Text */
+.slide-from-top {
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: all 1s ease-out;
+}
+
+.slide-from-top.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Animation for Left Side */
 .slide-from-left {
   transform: translateX(-100%);
   opacity: 0;
@@ -141,7 +161,7 @@ body {
   opacity: 1;
 }
 
-/* Animation for image (right side) */
+/* Animation for Right Side */
 .slide-from-right {
   transform: translateX(100%);
   opacity: 0;
@@ -152,5 +172,3 @@ body {
   transform: translateX(0);
   opacity: 1;
 }
-
-  

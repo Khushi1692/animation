@@ -4,9 +4,9 @@ const coder = document.getElementById("coder");
 const designer = document.getElementById("designer");
 const faceImg = document.getElementById("face-img");
 
-const defaultImg = "assests/about.jpg";
-const designerImg = "assests/colored_face.png";
-const coderImg = "assests/simple_face.png"; // use different if needed
+const defaultImg = "assests/about1.png";
+const designerImg = "assests/colored_face1.png";
+const coderImg = "assests/simple_face1.png"; // use different if needed
 
 face.addEventListener("mousemove", (e) => {
   const faceRect = face.getBoundingClientRect();
