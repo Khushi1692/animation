@@ -8,7 +8,7 @@ html, body {
   padding: 0;
   font-family: 'Segoe UI', sans-serif;
   background-color: #fff;
-  overflow: hidden;       /* Hide both horizontal and vertical scrollbars */
+  overflow: hidden;
   max-width: 100%;
 }
 
@@ -35,6 +35,7 @@ html, body {
   gap: 30px;
   margin: 0;
   padding: 0;
+  position: relative;
 }
 
 .nav-links li a {
@@ -60,6 +61,78 @@ html, body {
   color: #999;
 }
 
+/* Ensure dropdowns appear above other content */
+.dropdown-menu,
+.dropdown-submenu {
+  display: none;
+  position: absolute;
+  background-color: #222; /* lighter than pure black */
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  list-style: none;
+  padding: 10px 10px;
+  margin-top: 10px; /* space from nav */
+  min-width: 200px;
+  z-index: 1000;
+  border-radius: 6px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 0;
+  transform: translateY(-10px);
+}
+.navbar .dropdown-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px; /* spacing between text and icon */
+}
+
+/* Move the arrow icon slightly downward */
+.navbar .dropdown-toggle i {
+  position: relative;
+  top: 3px; /* adjust this value to move it lower */
+  font-size: 0.85em; /* optional: reduce size slightly */
+}
+/* Show dropdown when active */
+.dropdown-menu.active,
+.dropdown-submenu.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Make dropdown items visible and styled */
+.dropdown-menu li,
+.dropdown-submenu li {
+  padding: 10px 20px;
+  white-space: nowrap;
+  
+}
+
+.dropdown-menu li:hover,
+.dropdown-submenu li:hover {
+  background-color: #333;
+  cursor: pointer;
+}
+
+/* Make sure nav bar has enough z-index */
+.navbar {
+  z-index: 2000;
+  position: relative;
+}
+
+
+/* Optional: arrow style fix for clarity */
+.dropdown-toggle::after {
+  font-size: 0.6rem;
+}
+
+/* Submenu positioning (appears to right of parent) */
+.dropdown-submenu {
+  left: 100%;
+  top: 0;
+  margin-left: 5px;
+}
+
+
 /* Face Section */
 .face {
   position: relative;
@@ -84,7 +157,7 @@ html, body {
 .coder {
   position: absolute;
   top: 0;
-  width: 50%;
+  width: 40%;
   height: 100%;
   display: flex;
   align-items: center;
@@ -92,26 +165,24 @@ html, body {
   z-index: 3;
   text-align: center;
   transition: opacity 0.3s ease;
- 
- 
 }
 
 .designer {
   left: 0;
   background-color: transparent;
-  
 }
 
 .coder {
   right: 0;
   background-color: transparent;
 }
+
 .coder .description {
-  margin-left: 80px;  /* Increase space from the face image */
+  margin-left: 80px;
 }
 
 .designer .description {
-  margin-right: 80px;  /* Optional: for symmetry */
+  margin-right: 80px;
 }
 
 .description {
@@ -171,4 +242,132 @@ html, body {
 .slide-from-right.active {
   transform: translateX(0);
   opacity: 1;
+}
+
+/* Menu Toggle Button */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+/* Mobile Slide Menu */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  height: 100%;
+  width: 75%;
+  max-width: 300px;
+  background-color: #111;
+  display: flex;
+  flex-direction: column;
+  padding: 50px 20px;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.4);
+  transition: right 0.3s ease;
+  z-index: 1002;
+}
+
+.mobile-menu.active {
+  right: 0;
+}
+
+.mobile-nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-nav-links li {
+  margin: 20px 0;
+}
+
+.mobile-nav-links a {
+  color: white;
+  font-size: 22px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.mobile-nav-links a:hover {
+  color: #999;
+}
+
+.mobile-social-icons {
+  margin-top: auto;
+  display: flex;
+  gap: 20px;
+}
+
+.mobile-social-icons a {
+  color: white;
+  font-size: 22px;
+}
+
+.close-menu {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  .nav-links,
+  .social-icons {
+    display: none !important;
+  }
+
+  .nav-links .dropdown-menu,
+  .nav-links .dropdown-submenu {
+    display: none !important;
+  }
+}
+
+.mobile-nav-links li a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 20px;
+  color: white;
+  padding: 10px 0;
+  text-decoration: none;
+}
+
+.mobile-nav-links li a i {
+  font-size: 22px;
 }

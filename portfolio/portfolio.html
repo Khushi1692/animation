@@ -13,22 +13,37 @@
 
 </head>
 <body>
-    <div class="content portfolio-main clearfix">
-        <nav class="navbar slide-from-top">
-            <div class="logo">
-              <a href="../index.html"><img src="../assests/logo.png" alt="Logo" /></a>
-            </div>
-            <ul class="nav-links">
-              <li><a href="../about/about.html">about</a></li>
-              <li><a href="portfolio.html">portfolio</a></li>
-              <li><a href="../contact/contact.html">contact</a></li>
-            </ul>
-            <div class="social-icons">
-              <a href="#"><i class="fab fa-twitter"></i></a>
-              <a href="#"><i class="fab fa-linkedin-in"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
-            </div>
-        </nav>
+       <nav class="navbar slide-from-top">
+        <div class="logo">
+          <a href="../index.html"><img src="../assests/logo.png" alt="Logo" /></a>
+        </div>
+        <ul class="nav-links">
+          <li><a href="../about/about.html">about</a></li>
+          <li><a href="portfolio.html">portfolio</a></li>
+          <li><a href="../contact/contact.html">contact</a></li>
+        </ul>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://www.linkedin.com/in/chatrolamit047/"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.instagram.com/walk.err.047"><i class="fab fa-instagram"></i></a>
+        </div>
+        <button class="menu-toggle" aria-label="Toggle menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </nav>
+       <!-- Overlay -->
+      <div class="overlay" id="overlay"></div>
+
+      <!-- Mobile Menu -->
+      <div class="mobile-menu" id="mobileMenu">
+        <ul class="mobile-nav-links">
+          <li><a href="../about/about.html"><i class="fas fa-user"></i> about</a></li>
+          <li><a href="../portfolio/portfolio.html"><i class="fas fa-briefcase"></i> portfolio</a></li>
+          <li><a href="../contact/contact.html"><i class="fas fa-envelope"></i> contact</a></li>
+        </ul>
+        <button class="close-menu" id="closeMenu" aria-label="Close menu">&times;</button>
+      </div>
+       
 		<section class="main nopad-b">
 			<div class="row">
 				<div id="text-main" class="col-5 text-main" style="visibility: visible; right: 0%; opacity: 1;">
