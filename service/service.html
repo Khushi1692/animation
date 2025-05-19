@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Creative Studio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      scroll-behavior: smooth;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    /* BANNER */
+    .banner {
+      background: #00c853;
+      color: #000;
+      text-align: center;
+      padding: 10px 20px;
+      font-weight: 500;
+    }
+
+    /* NAVIGATION */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #000;
+      padding: 1rem 0;
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: white;
+      left: 0;
+      bottom: -4px;
+      transition: 0.3s;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      background: linear-gradient(120deg, #000000, transparent);
+      color: white;
+      padding: 150px 20px 100px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 1rem;
+      animation: slideDown 1s ease-out;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: auto;
+      color: #ccc;
+      animation: fadeIn 1.5s ease;
+    }
+
+    .hero .price-note {
+      margin-top: 1rem;
+      font-size: 1.1rem;
+      color: #00c853;
+      font-weight: 500;
+    }
+
+    .hero a.cta {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 12px 25px;
+      background: #00c853;
+      color: #000;
+      font-weight: 600;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+
+    section {
+      padding: 100px 30px 60px;
+      max-width: 1100px;
+      margin: auto;
+      text-align: center;
+    }
+
+    section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 2rem;
+    }
+
+    .service-card {
+      background: #111;
+      border: 1px solid #333;
+      border-radius: 16px;
+      width: 270px;
+      padding: 25px 20px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    }
+
+    .service-card i {
+      font-size: 2rem;
+      margin-bottom: 15px;
+      color: white;
+    }
+
+    .service-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: white;
+    }
+
+    .service-card p {
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    /* PRICING SECTION */
+    .pricing .service-card {
+      background: #fff;
+      color: #111;
+      border: 2px solid #eee;
+    }
+
+    .pricing .service-card h3 {
+      color: #111;
+    }
+
+    .pricing .service-card p {
+      color: #444;
+    }
+
+    .pricing .service-card ul {
+      text-align: left;
+      color: #666;
+      font-size: 0.9rem;
+      margin-top: 10px;
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .pricing .service-card ul li::before {
+      content: "✔ ";
+      color: #00c853;
+    }
+
+    .pricing .highlight {
+      border: 2px solid #00c853;
+    }
+
+    /* SHOWCASE */
+    .showcase-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 2rem;
+    }
+
+    .showcase-card {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .showcase-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .showcase-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .showcase-card .content {
+      padding: 20px;
+      text-align: left;
+    }
+
+    .showcase-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+      color: #111;
+    }
+
+    .showcase-card p {
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      background: #111;
+      color: #fff;
+      font-size: 0.9rem;
+    }
+
+    /* ANIMATIONS */
+    @keyframes slideDown {
+      0% { opacity: 0; transform: translateY(-40px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .service-card {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PROMO BANNER -->
+  <div class="banner">
+    💡 Special Offer: Complete digital setup starting at just $99! Limited time only.
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#design">Design</a>
+    <a href="#development">Development</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#showcase">Showcase</a>
+  </nav>
+
+  <!-- HERO -->
+  <!-- HERO -->
+<section class="hero">
+  <h1>We Design, Build & Inspire</h1>
+  <p>From concept to launch, we turn your ideas into digital experiences that connect, captivate, and convert.</p>
+  <p class="price-note">
+    All-in-one services starting at just 
+    <strong style="color: #000;  padding: 4px 10px; border-radius: 6px; font-size:25px;">
+      $79 AUD
+    </strong>.
+  </p>
+  <a href="#pricing" class="cta">See Pricing Plans</a>
+</section>
+
+
+  <!-- DESIGN SECTION -->
+  <section id="design">
+    <h2>🎨 Design Services</h2>
+    <div class="services">
+      <div class="service-card">
+        <i class="fas fa-pencil-ruler"></i>
+        <h3>UI/UX Design</h3>
+        <p>Crafting intuitive user journeys that engage and convert.</p>
+      </div>
+      <div class="service-card">
+        <i class="fab fa-instagram"></i>
+        <h3>Social Media Design</h3>
+        <p>Thumb-stopping content tailored for your brand voice.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-bullseye"></i>
+        <h3>Branding</h3>
+        <p>From logo to tone — build a brand that leaves a mark.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-video"></i>
+        <h3>Social Videos</h3>
+        <p>Engaging reels, shorts, and animations for social growth.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEVELOPMENT SECTION -->
+  <section id="development">
+    <h2>💻 Development Services</h2>
+    <div class="services">
+      <div class="service-card">
+        <i class="fab fa-wordpress-simple"></i>
+        <h3>No-Code Sites</h3>
+        <p>Rapid Wix, WordPress & Shopify builds that work beautifully.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-code"></i>
+        <h3>Custom Web Apps</h3>
+        <p>From React to Python — we code ideas into products.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-mobile-alt"></i>
+        <h3>Responsive Design</h3>
+        <p>Your site, pixel-perfect on all devices and screens.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-rocket"></i>
+        <h3>Speed Optimization</h3>
+        <p>Blazing fast performance, SEO-ready and reliable.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING SECTION -->
+  <section id="pricing" class="pricing">
+    <h2>💰 Transparent & Affordable Pricing</h2>
+    <p style="max-width:700px; margin:auto; color:#555; font-size:1rem;">
+      We believe great digital services should be accessible. Here’s what we offer — no hidden fees, just real value.
+    </p>
+    <div class="services">
+      <div class="service-card">
+        <h3>Starter Package</h3>
+        <p>Perfect for individuals & startups</p>
+        <p><strong style="font-size:1.8rem; color:#00c853;">$199(AUD)</strong></p>
+        <ul>
+          <li>1 Page Design</li>
+          <li>Logo + Branding Guide</li>
+          <li>1 Week Delivery</li>
+        </ul>
+      </div>
+      <div class="service-card highlight">
+        <h3>Business Bundle <span style="background:#00c853; color:#000; padding:4px 10px; border-radius:20px; font-size:0.8rem; font-weight:600;">Best Deal</span></h3>
+        <p>Our most popular package!</p>
+        <p><strong style="font-size:1.8rem; color:#00c853;">$799</strong></p>
+        <ul>
+          <li>5 Pages Website</li>
+          <li>Branding + Social Kit</li>
+          <li>Speed Optimization</li>
+          <li>24/7 Support</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <h3>Full Studio Pack</h3>
+        <p>For scaling brands and businesses</p>
+        <p><strong style="font-size:1.8rem; color:#00c853;">$1499</strong></p>
+        <ul>
+          <li>Custom Web App</li>
+          <li>Complete Branding</li>
+          <li>Social Media Videos</li>
+          <li>Priority Support</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <h3>Full Studio Pack</h3>
+        <p>For scaling brands and businesses</p>
+        <p><strong style="font-size:1.8rem; color:#00c853;">$1499</strong></p>
+        <ul>
+          <li>Custom Web App</li>
+          <li>Complete Branding</li>
+          <li>Social Media Videos</li>
+          <li>Priority Support</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOWCASE SECTION -->
+  <!-- <section id="showcase">
+    <h2>📸 Work Showcase</h2>
+    <div class="showcase-container">
+      <div class="showcase-card">
+        <img src="../assests/mct.png" alt="Project 1">
+        <div class="content">
+          <h3>Project One</h3>
+          <p>A sleek landing page for a SaaS startup.</p>
+        </div>
+      </div>
+      <div class="showcase-card">
+        <img src="../assests/printme.png" alt="Project 2">
+        <div class="content">
+          <h3>Project Two</h3>
+          <p>Social media campaign visuals and stories.</p>
+        </div>
+      </div>
+      <div class="showcase-card">
+        <img src="https://via.placeholder.com/600x400?text=Project+3" alt="Project 3">
+        <div class="content">
+          <h3>Project Three</h3>
+          <p>Branding overhaul for a digital agency.</p>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- FOOTER -->
+  <footer>
+    &copy; 2025 Creative Studio. All rights reserved.
+  </footer>
+
+</body>
+</html>

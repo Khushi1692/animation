@@ -4,7 +4,7 @@ const coder = document.getElementById("coder");
 const designer = document.getElementById("designer");
 const faceImg = document.getElementById("face-img");
 
-const defaultImg = "assests/about1.png";
+const defaultImg = "assests/demo1.png";
 const designerImg = "assests/colored_face1.png";
 const coderImg = "assests/simple_face1.png";
 
