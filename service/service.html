@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Creative Studio</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <style>
     * {
       box-sizing: border-box;
@@ -14,13 +14,13 @@
     }
 
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Poppins', sans-serif;
       scroll-behavior: smooth;
       background: #f9f9f9;
       color: #333;
     }
 
-    /* BANNER */
+    /* Banner */
     .banner {
       background: #00c853;
       color: #000;
@@ -29,7 +29,7 @@
       font-weight: 500;
     }
 
-    /* NAVIGATION */
+    /* Navigation */
     nav {
       position: fixed;
       top: 0;
@@ -66,7 +66,7 @@
       width: 100%;
     }
 
-    /* HERO SECTION */
+    /* Hero Section */
     .hero {
       background: linear-gradient(120deg, #000000, transparent);
       color: white;
@@ -77,9 +77,7 @@
     .hero h1 {
       font-size: 3rem;
       font-weight: 700;
-      color: white;
       margin-bottom: 1rem;
-      animation: slideDown 1s ease-out;
     }
 
     .hero p {
@@ -87,7 +85,6 @@
       max-width: 700px;
       margin: auto;
       color: #ccc;
-      animation: fadeIn 1.5s ease;
     }
 
     .hero .price-note {
@@ -108,6 +105,7 @@
       text-decoration: none;
     }
 
+    /* Section wrapper */
     section {
       padding: 100px 30px 60px;
       max-width: 1100px;
@@ -120,6 +118,7 @@
       margin-bottom: 1.5rem;
     }
 
+    /* Services */
     .services {
       display: flex;
       flex-wrap: wrap;
@@ -136,6 +135,7 @@
       padding: 25px 20px;
       transition: transform 0.3s, box-shadow 0.3s;
       cursor: pointer;
+      color: white;
     }
 
     .service-card:hover {
@@ -146,13 +146,11 @@
     .service-card i {
       font-size: 2rem;
       margin-bottom: 15px;
-      color: white;
     }
 
     .service-card h3 {
       font-size: 1.2rem;
       margin-bottom: 10px;
-      color: white;
     }
 
     .service-card p {
@@ -160,282 +158,261 @@
       color: #aaa;
     }
 
-    /* PRICING SECTION */
-    .pricing .service-card {
-      background: #fff;
-      color: #111;
-      border: 2px solid #eee;
-    }
-
-    .pricing .service-card h3 {
-      color: #111;
-    }
-
-    .pricing .service-card p {
-      color: #444;
-    }
-
-    .pricing .service-card ul {
-      text-align: left;
-      color: #666;
-      font-size: 0.9rem;
-      margin-top: 10px;
-      list-style: none;
-      padding-left: 0;
-    }
-
-    .pricing .service-card ul li::before {
-      content: "✔ ";
-      color: #00c853;
-    }
-
-    .pricing .highlight {
-      border: 2px solid #00c853;
-    }
-
-    /* SHOWCASE */
-    .showcase-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-      margin-top: 2rem;
-    }
-
-    .showcase-card {
-      background: #fff;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .showcase-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    }
-
-    .showcase-card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
-
-    .showcase-card .content {
-      padding: 20px;
-      text-align: left;
-    }
-
-    .showcase-card h3 {
-      font-size: 1.1rem;
-      margin-bottom: 10px;
-      color: #111;
-    }
-
-    .showcase-card p {
-      font-size: 0.9rem;
-      color: #666;
-    }
-
-    footer {
+    /* Pricing */
+    .pricing-modern {
+      padding: 60px 20px;
+      background: linear-gradient(to bottom right, #f8f9fa, #e0f7fa);
       text-align: center;
-      padding: 40px 20px;
-      background: #111;
+    }
+
+    .pricing-title {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .pricing-subtitle {
+      font-size: 1.2rem;
+      color: #555;
+      margin-bottom: 40px;
+    }
+
+    .pricing-cards {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .pricing-card {
+      width: 280px;
+      height: 360px;
+      perspective: 1000px;
+      position: relative;
+      border: 2px solid transparent;
+      border-radius: 12px;
+      background-clip: padding-box;
+    }
+
+    .card-inner {
+      width: 100%;
+      height: 100%;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+      position: relative;
+    }
+
+    .pricing-card:hover .card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .card-front,
+    .card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 20px;
+      padding: 20px;
+      box-sizing: border-box;
+      backface-visibility: hidden;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .card-front {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      color: #333;
+    }
+
+    .card-back {
+      transform: rotateY(180deg);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      color: #111;
+    }
+
+    .price {
+      font-size: 2rem;
+      color: #00c853;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+
+    .cta {
+      background-color: #00c853;
+      padding: 10px 20px;
+      border-radius: 30px;
       color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s ease;
+    }
+
+    .cta:hover {
+      background-color: #00a243;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 10px;
+    }
+
+    ul li {
+      margin-bottom: 8px;
+    }
+
+    .flip-note {
       font-size: 0.9rem;
+      color: #666;
     }
 
-    /* ANIMATIONS */
-    @keyframes slideDown {
-      0% { opacity: 0; transform: translateY(-40px); }
-      100% { opacity: 1; transform: translateY(0); }
+    .badge {
+      position: absolute;
+      top: -12px;
+      left: 12px;
+      background: linear-gradient(45deg, #00c853, #b2ff59);
+      color: #fff;
+      padding: 4px 12px;
+      font-size: 0.8rem;
+      font-weight: bold;
+      border-radius: 12px;
+      z-index: 2;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
     }
 
-    @keyframes fadeIn {
-      0% { opacity: 0; }
-      100% { opacity: 1; }
+    .badge.popular {
+      background: linear-gradient(45deg, #ff6d00, #ffab40);
     }
 
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2rem;
-      }
+    .pricing-card:hover .card-front {
+      box-shadow: 0 0 15px #00c853, 0 0 25px #00c85340;
+    }
 
-      .service-card {
-        width: 90%;
-      }
+    .tilt {
+      transition: transform 0.3s ease;
+    }
+
+    .tilt:hover {
+      transform: perspective(1000px) rotateX(2deg) rotateY(2deg);
+    }
+
+    .pricing-card.highlight {
+      border-image: linear-gradient(to right, #00c853, #b2ff59) 1;
     }
   </style>
 </head>
 <body>
 
-  <!-- PROMO BANNER -->
-  <div class="banner">
-    💡 Special Offer: Complete digital setup starting at just $99! Limited time only.
-  </div>
+  <div class="banner">🔥 Launch Offer - 50% OFF on all services!</div>
 
-  <!-- NAV -->
   <nav>
-    <a href="#design">Design</a>
-    <a href="#development">Development</a>
+    <a href="../index.html">Home</a>
+    <a href="#services">Services</a>
     <a href="#pricing">Pricing</a>
-    <a href="#showcase">Showcase</a>
   </nav>
 
-  <!-- HERO -->
-  <!-- HERO -->
-<section class="hero">
-  <h1>We Design, Build & Inspire</h1>
-  <p>From concept to launch, we turn your ideas into digital experiences that connect, captivate, and convert.</p>
-  <p class="price-note">
-    All-in-one services starting at just 
-    <strong style="color: #000;  padding: 4px 10px; border-radius: 6px; font-size:25px;">
-      $79 AUD
-    </strong>.
-  </p>
-  <a href="#pricing" class="cta">See Pricing Plans</a>
-</section>
-
-
-  <!-- DESIGN SECTION -->
-  <section id="design">
-    <h2>🎨 Design Services</h2>
-    <div class="services">
-      <div class="service-card">
-        <i class="fas fa-pencil-ruler"></i>
-        <h3>UI/UX Design</h3>
-        <p>Crafting intuitive user journeys that engage and convert.</p>
-      </div>
-      <div class="service-card">
-        <i class="fab fa-instagram"></i>
-        <h3>Social Media Design</h3>
-        <p>Thumb-stopping content tailored for your brand voice.</p>
-      </div>
-      <div class="service-card">
-        <i class="fas fa-bullseye"></i>
-        <h3>Branding</h3>
-        <p>From logo to tone — build a brand that leaves a mark.</p>
-      </div>
-      <div class="service-card">
-        <i class="fas fa-video"></i>
-        <h3>Social Videos</h3>
-        <p>Engaging reels, shorts, and animations for social growth.</p>
-      </div>
-    </div>
+  <section class="hero" id="home">
+    <h1>Welcome to Creative Studio</h1>
+    <p>Unleashing creativity through design, branding & storytelling</p>
+    <p class="price-note">Get started from just $99</p>
+    <a href="#pricing" class="cta">Explore Pricing</a>
   </section>
 
-  <!-- DEVELOPMENT SECTION -->
-  <section id="development">
-    <h2>💻 Development Services</h2>
+  <section id="services">
+    <h2>Our Services</h2>
     <div class="services">
       <div class="service-card">
-        <i class="fab fa-wordpress-simple"></i>
-        <h3>No-Code Sites</h3>
-        <p>Rapid Wix, WordPress & Shopify builds that work beautifully.</p>
+        <i class="fas fa-paint-brush"></i>
+        <h3>Graphic Design</h3>
+        <p>Logos, brochures, and all your creative needs</p>
       </div>
       <div class="service-card">
         <i class="fas fa-code"></i>
-        <h3>Custom Web Apps</h3>
-        <p>From React to Python — we code ideas into products.</p>
+        <h3>Web Development</h3>
+        <p>Modern websites with responsive design</p>
       </div>
       <div class="service-card">
-        <i class="fas fa-mobile-alt"></i>
-        <h3>Responsive Design</h3>
-        <p>Your site, pixel-perfect on all devices and screens.</p>
-      </div>
-      <div class="service-card">
-        <i class="fas fa-rocket"></i>
-        <h3>Speed Optimization</h3>
-        <p>Blazing fast performance, SEO-ready and reliable.</p>
+        <i class="fas fa-bullhorn"></i>
+        <h3>Marketing</h3>
+        <p>Social media campaigns that deliver results</p>
       </div>
     </div>
   </section>
 
-  <!-- PRICING SECTION -->
-  <section id="pricing" class="pricing">
-    <h2>💰 Transparent & Affordable Pricing</h2>
-    <p style="max-width:700px; margin:auto; color:#555; font-size:1rem;">
-      We believe great digital services should be accessible. Here’s what we offer — no hidden fees, just real value.
-    </p>
-    <div class="services">
-      <div class="service-card">
-        <h3>Starter Package</h3>
-        <p>Perfect for individuals & startups</p>
-        <p><strong style="font-size:1.8rem; color:#00c853;">$199(AUD)</strong></p>
-        <ul>
-          <li>1 Page Design</li>
-          <li>Logo + Branding Guide</li>
-          <li>1 Week Delivery</li>
-        </ul>
+  <section class="pricing-modern" id="pricing">
+    <h2 class="pricing-title">Pricing Plans</h2>
+    <p class="pricing-subtitle">Choose the best plan for your business</p>
+    <div class="pricing-cards">
+
+      <div class="pricing-card tilt">
+        <span class="badge">Basic</span>
+        <div class="card-inner">
+          <div class="card-front">
+            <h3>Starter</h3>
+            <div class="price">$99</div>
+            <ul>
+              <li>1 Logo Design</li>
+              <li>Social Media Kit</li>
+              <li>1 Revision</li>
+            </ul>
+            <p class="flip-note">Hover for more</p>
+          </div>
+          <div class="card-back">
+            <p>Perfect for small businesses starting out.</p>
+            <a href="#" class="cta">Get Started</a>
+          </div>
+        </div>
       </div>
-      <div class="service-card highlight">
-        <h3>Business Bundle <span style="background:#00c853; color:#000; padding:4px 10px; border-radius:20px; font-size:0.8rem; font-weight:600;">Best Deal</span></h3>
-        <p>Our most popular package!</p>
-        <p><strong style="font-size:1.8rem; color:#00c853;">$799</strong></p>
-        <ul>
-          <li>5 Pages Website</li>
-          <li>Branding + Social Kit</li>
-          <li>Speed Optimization</li>
-          <li>24/7 Support</li>
-        </ul>
+
+      <div class="pricing-card tilt highlight">
+        <span class="badge popular">Popular</span>
+        <div class="card-inner">
+          <div class="card-front">
+            <h3>Professional</h3>
+            <div class="price">$199</div>
+            <ul>
+              <li>3 Logo Concepts</li>
+              <li>Brand Guidelines</li>
+              <li>Unlimited Revisions</li>
+            </ul>
+            <p class="flip-note">Hover for more</p>
+          </div>
+          <div class="card-back">
+            <p>Ideal for growing brands looking to scale.</p>
+            <a href="#" class="cta">Choose Plan</a>
+          </div>
+        </div>
       </div>
-      <div class="service-card">
-        <h3>Full Studio Pack</h3>
-        <p>For scaling brands and businesses</p>
-        <p><strong style="font-size:1.8rem; color:#00c853;">$1499</strong></p>
-        <ul>
-          <li>Custom Web App</li>
-          <li>Complete Branding</li>
-          <li>Social Media Videos</li>
-          <li>Priority Support</li>
-        </ul>
+
+      <div class="pricing-card tilt">
+        <span class="badge">Premium</span>
+        <div class="card-inner">
+          <div class="card-front">
+            <h3>Enterprise</h3>
+            <div class="price">$499</div>
+            <ul>
+              <li>Full Branding Suite</li>
+              <li>Web Design Included</li>
+              <li>Priority Support</li>
+            </ul>
+            <p class="flip-note">Hover for more</p>
+          </div>
+          <div class="card-back">
+            <p>Best for large businesses and agencies.</p>
+            <a href="#" class="cta">Contact Us</a>
+          </div>
+        </div>
       </div>
-      <div class="service-card">
-        <h3>Full Studio Pack</h3>
-        <p>For scaling brands and businesses</p>
-        <p><strong style="font-size:1.8rem; color:#00c853;">$1499</strong></p>
-        <ul>
-          <li>Custom Web App</li>
-          <li>Complete Branding</li>
-          <li>Social Media Videos</li>
-          <li>Priority Support</li>
-        </ul>
-      </div>
+
     </div>
   </section>
-
-  <!-- SHOWCASE SECTION -->
-  <!-- <section id="showcase">
-    <h2>📸 Work Showcase</h2>
-    <div class="showcase-container">
-      <div class="showcase-card">
-        <img src="../assests/mct.png" alt="Project 1">
-        <div class="content">
-          <h3>Project One</h3>
-          <p>A sleek landing page for a SaaS startup.</p>
-        </div>
-      </div>
-      <div class="showcase-card">
-        <img src="../assests/printme.png" alt="Project 2">
-        <div class="content">
-          <h3>Project Two</h3>
-          <p>Social media campaign visuals and stories.</p>
-        </div>
-      </div>
-      <div class="showcase-card">
-        <img src="https://via.placeholder.com/600x400?text=Project+3" alt="Project 3">
-        <div class="content">
-          <h3>Project Three</h3>
-          <p>Branding overhaul for a digital agency.</p>
-        </div>
-      </div>
-    </div>
-  </section> -->
-
-  <!-- FOOTER -->
-  <footer>
-    &copy; 2025 Creative Studio. All rights reserved.
-  </footer>
 
 </body>
 </html>
