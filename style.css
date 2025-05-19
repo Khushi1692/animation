@@ -8,7 +8,6 @@ html, body {
   padding: 0;
   font-family: 'Segoe UI', sans-serif;
   background-color: #fff;
-  overflow: hidden;
   max-width: 100%;
 }
 
@@ -20,6 +19,8 @@ html, body {
   background-color: #111;
   padding: 10px 30px;
   color: white;
+  position: relative;
+  z-index: 10;
 }
 
 .logo img {
@@ -29,13 +30,13 @@ html, body {
   background-color: white;
 }
 
+/* Desktop Nav Links */
 .nav-links {
   list-style: none;
   display: flex;
   gap: 30px;
   margin: 0;
   padding: 0;
-  position: relative;
 }
 
 .nav-links li a {
@@ -49,89 +50,82 @@ html, body {
   color: #999;
 }
 
+.social-icons {
+  display: flex;
+  align-items: center;
+}
+
 .social-icons a {
   color: white;
   margin-left: 30px;
   font-size: 25px;
   transition: color 0.3s ease;
-  gap: 30px;
 }
 
 .social-icons a:hover {
   color: #999;
 }
 
-/* Ensure dropdowns appear above other content */
-.dropdown-menu,
-.dropdown-submenu {
+/* Dropdown Container */
+.dropdown {
+  position: relative;
+}
+
+/* Mega Menu */
+.mega-menu {
   display: none;
   position: absolute;
-  background-color: #222; /* lighter than pure black */
-  color: white;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
-  list-style: none;
-  padding: 10px 10px;
-  margin-top: 10px; /* space from nav */
-  min-width: 200px;
+  top: 100%;
+  left: 0;
+  background-color: #000;
+  color: #fff;
+  padding: 30px;
+  width: 100vw;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   z-index: 1000;
-  border-radius: 6px;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  opacity: 0;
-  transform: translateY(-10px);
-}
-.navbar .dropdown-toggle {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px; /* spacing between text and icon */
+  flex-wrap: wrap;
+  gap: 40px;
 }
 
-/* Move the arrow icon slightly downward */
-.navbar .dropdown-toggle i {
-  position: relative;
-  top: 3px; /* adjust this value to move it lower */
-  font-size: 0.85em; /* optional: reduce size slightly */
+/* Show Mega Menu on Hover */
+.dropdown:hover .mega-menu {
+  display: flex;
 }
-/* Show dropdown when active */
-.dropdown-menu.active,
-.dropdown-submenu.active {
+
+/* Mega Menu Columns */
+.mega-menu .column {
+  min-width: 180px;
+}
+
+/* Headings in Mega Menu */
+.mega-menu h4 {
+  font-size: 16px;
+  color: #fce93c;
+  margin-bottom: 8px;
+  position: relative;
+}
+
+.mega-menu h4::after {
+  content: "";
   display: block;
-  opacity: 1;
-  transform: translateY(0);
+  width: 30px;
+  height: 2px;
+  background: #fce93c;
+  margin-top: 4px;
 }
 
-/* Make dropdown items visible and styled */
-.dropdown-menu li,
-.dropdown-submenu li {
-  padding: 10px 20px;
-  white-space: nowrap;
-  
+.mega-menu a {
+  display: block;
+  padding: 4px 0;
+  color: #fff;
+  font-size: 14px;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-.dropdown-menu li:hover,
-.dropdown-submenu li:hover {
-  background-color: #333;
-  cursor: pointer;
+.mega-menu a:hover {
+  color: #fce93c;
 }
-
-/* Make sure nav bar has enough z-index */
-.navbar {
-  z-index: 2000;
-  position: relative;
-}
-
-
-/* Optional: arrow style fix for clarity */
-.dropdown-toggle::after {
-  font-size: 0.6rem;
-}
-
-/* Submenu positioning (appears to right of parent) */
-.dropdown-submenu {
-  left: 100%;
-  top: 0;
-  margin-left: 5px;
-}
-
 
 /* Face Section */
 .face {
@@ -169,12 +163,10 @@ html, body {
 
 .designer {
   left: 0;
-  background-color: transparent;
 }
 
 .coder {
   right: 0;
-  background-color: transparent;
 }
 
 .coder .description {
@@ -201,14 +193,7 @@ html, body {
   margin-top: 10px;
 }
 
-/* Arrows */
-.chevron-left,
-.chevron-right {
-  color: #333;
-  font-weight: bold;
-}
-
-/* Animation for Top Text */
+/* Animations */
 .slide-from-top {
   transform: translateY(-100%);
   opacity: 0;
@@ -220,7 +205,6 @@ html, body {
   opacity: 1;
 }
 
-/* Animation for Left Side */
 .slide-from-left {
   transform: translateX(-100%);
   opacity: 0;
@@ -232,7 +216,6 @@ html, body {
   opacity: 1;
 }
 
-/* Animation for Right Side */
 .slide-from-right {
   transform: translateX(100%);
   opacity: 0;
@@ -244,7 +227,7 @@ html, body {
   opacity: 1;
 }
 
-/* Menu Toggle Button */
+/* Hamburger Icon */
 .menu-toggle {
   display: none;
   font-size: 28px;
@@ -253,9 +236,12 @@ html, body {
   border: none;
   cursor: pointer;
   z-index: 1001;
+  position: absolute;
+  top: 15px;
+  right: 20px;
 }
 
-/* Mobile Slide Menu */
+/* Mobile Menu */
 .mobile-menu {
   position: fixed;
   top: 0;
@@ -286,14 +272,17 @@ html, body {
   margin: 20px 0;
 }
 
-.mobile-nav-links a {
+.mobile-nav-links li a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 20px;
   color: white;
-  font-size: 22px;
   text-decoration: none;
-  transition: color 0.3s ease;
+  padding: 10px 0;
 }
 
-.mobile-nav-links a:hover {
+.mobile-nav-links li a:hover {
   color: #999;
 }
 
@@ -338,36 +327,14 @@ html, body {
   visibility: visible;
 }
 
-/* Responsive */
+/* Responsive Behavior */
 @media (max-width: 992px) {
   .menu-toggle {
     display: block;
-    position: absolute;
-    top: 20px;
-    right: 20px;
   }
 
   .nav-links,
   .social-icons {
-    display: none !important;
+    display: none;
   }
-
-  .nav-links .dropdown-menu,
-  .nav-links .dropdown-submenu {
-    display: none !important;
-  }
-}
-
-.mobile-nav-links li a {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 20px;
-  color: white;
-  padding: 10px 0;
-  text-decoration: none;
-}
-
-.mobile-nav-links li a i {
-  font-size: 22px;
 }
