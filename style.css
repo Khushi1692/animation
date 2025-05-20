@@ -50,19 +50,19 @@ html, body {
   color: #999;
 }
 
-.social-icons {
+.main-social-icons {
   display: flex;
   align-items: center;
 }
 
-.social-icons a {
+.main-social-icons a {
   color: white;
   margin-left: 30px;
   font-size: 25px;
   transition: color 0.3s ease;
 }
 
-.social-icons a:hover {
+.main-social-icons a:hover {
   color: #999;
 }
 
@@ -375,7 +375,7 @@ html, body {
 .client-title::after {
   content: '';
   display: block;
-  width: 80px;
+  width: 280px;
   height: 4px;
   background: #0077ff;
   margin: 10px auto 0;
@@ -427,12 +427,13 @@ html, body {
 
 /* Logo/avatar above text */
 .client-logo {
-  width: 60px;
-  height: 60px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
   margin-bottom: 12px;
   object-fit: cover;
   border: 2px solid #ddd;
+  background-color: #000;
 }
 
 /* Testimonial text */

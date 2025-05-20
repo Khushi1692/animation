@@ -2,592 +2,178 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Creative Studio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Design & Experience</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/your-kit.js" crossorigin="anonymous"></script>
   <style>
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
-
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      scroll-behavior: smooth;
-      background: #f9f9f9;
-      color: #333;
+      font-family: 'Outfit', sans-serif;
+      background: #0f0f0f;
+      color: #ffffff;
     }
-
-    /* BANNER */
-    .banner {
-      background: #00c853;
-      color: #000;
-      text-align: center;
-      padding: 10px 20px;
-      font-weight: 500;
-    }
-
-    /* NAVIGATION */
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: #000;
-      padding: 1rem 0;
-      display: flex;
-      justify-content: center;
-      gap: 3rem;
-      z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    }
-
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-size: 1rem;
-      letter-spacing: 1px;
-      position: relative;
-    }
-
-    nav a::after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 2px;
-      background: white;
-      left: 0;
-      bottom: -4px;
-      transition: 0.3s;
-    }
-
-    nav a:hover::after {
-      width: 100%;
-    }
-
-    /* HERO SECTION */
     .hero {
-      background: linear-gradient(120deg, #000000, transparent);
-      color: white;
-      padding: 150px 20px 100px;
+      
+      padding: 100px 20px;
       text-align: center;
-    }
-
-    .hero h1 {
-      font-size: 3rem;
-      font-weight: 700;
+     
+      position: relative;
+      overflow: hidden;
+      /* background: linear-gradient(135deg, #f0f4ff, #47d4e7); */
+       background: linear-gradient(45deg, #0077ff, #b2ff59);
       color: white;
-      margin-bottom: 1rem;
-      animation: slideDown 1s ease-out;
+      
     }
-
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
     .hero p {
       font-size: 1.2rem;
-      max-width: 700px;
-      margin: auto;
-      color: #ccc;
-      animation: fadeIn 1.5s ease;
+      font-weight: 300;
     }
-
-    .hero .price-note {
-      margin-top: 1rem;
-      font-size: 1.1rem;
-      color: #00c853;
-      font-weight: 500;
+    .sub-nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 25px;
+      padding: 15px;
+      background: #1c1c1c;
+      position: sticky;
+      top: 0;
+      z-index: 99;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
     }
-
-    .hero a.cta {
-      display: inline-block;
-      margin-top: 2rem;
-      padding: 12px 25px;
-      background: #00c853;
-      color: #000;
-      font-weight: 600;
-      border-radius: 8px;
+    .sub-nav a {
+      color: #ffffff;
       text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+      border-bottom: 2px solid transparent;
     }
-
+    .sub-nav a:hover {
+      color: #1bcedf;
+      border-bottom: 2px solid #1bcedf;
+    }
     section {
-      padding: 100px 30px 60px;
+      padding: 100px 20px;
       max-width: 1100px;
       margin: auto;
-      text-align: center;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.6s ease;
+      position: relative;
     }
-
+    section.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
     section h2 {
       font-size: 2.5rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: 20px;
+      background: linear-gradient(90deg, #ff6ec4 0%, #7873f5 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
-
-    .services {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-      margin-top: 2rem;
-    }
-
-    .service-card {
-      background: #111;
-      border: 1px solid #333;
-      border-radius: 16px;
-      width: 270px;
-      padding: 25px 20px;
-      transition: transform 0.3s, box-shadow 0.3s;
-      cursor: pointer;
-    }
-
-    .service-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
-    }
-
-    .service-card i {
-      font-size: 2rem;
-      margin-bottom: 15px;
-      color: white;
-    }
-
-    .service-card h3 {
-      font-size: 1.2rem;
-      margin-bottom: 10px;
-      color: white;
-    }
-
-    .service-card p {
-      font-size: 0.9rem;
-      color: #aaa;
-    }
-
-    /* PRICING SECTION */
-    .pricing-modern {
-  padding: 60px 20px;
-  background: linear-gradient(to bottom right, #f8f9fa, #e0f7fa);
-  text-align: center;
-}
-
-.pricing-title {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-  color: #333;
-}
-
-.pricing-subtitle {
-  font-size: 1.2rem;
-  color: #555;
-  margin-bottom: 40px;
-}
-
-.pricing-cards {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 2rem;
-}
-
-.pricing-card {
-  perspective: 1000px;
-  width: 280px;
-  height: 360px;
-  position: relative;
-   border-radius: 12px;
-}
-
-.card-inner {
-  width: 100%;
-  height: 100%;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-  position: relative;
-}
-
-.pricing-card:hover .card-inner {
-  transform: rotateY(180deg);
-}
-
-.card-front,
-.card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 20px;
-  padding: 20px;
-  box-sizing: border-box;
-  backface-visibility: hidden;
-  background: rgba(255, 255, 255, 0.15);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-.card-front {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  color: #333;
-}
-
-.card-back {
-  transform: rotateY(180deg);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  color: #111;
-}
-
-.price {
-  font-size: 2rem;
-  color: #00c853;
-  font-weight: bold;
-  margin: 10px 0;
-}
-
-.cta {
-  background-color: #00c853;
-  padding: 10px 20px;
-  border-radius: 30px;
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s ease;
-}
-
-.cta:hover {
-  background-color: #00a243;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 10px;
-}
-
-ul li {
-  margin-bottom: 8px;
-}
-
-.flip-note {
-  font-size: 0.9rem;
-  color: #666;
-}
-
-.highlight .card-front {
-  border: 2px solid #00c853;
-}
-
-    .pricing .highlight {
-      border: 2px solid #00c853;
-    }
-    /* BADGES */
-.badge {
-  position: absolute;
-  top: -12px;
-  left: 12px;
-  background: linear-gradient(45deg, #00c853, #b2ff59);
-  color: #fff;
-  padding: 4px 12px;
-  font-size: 0.8rem;
-  font-weight: bold;
-  border-radius: 12px;
-  z-index: 2;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-}
-
-.badge.popular {
-  background: linear-gradient(45deg, #ff6d00, #ffab40);
-  border-radius: 12px;
-}
-
-/* GLOW EFFECT */
-.pricing-card:hover .card-front {
-  box-shadow: 0 0 15px #00c853, 0 0 25px #00c85340;
-}
-
-/* TILT EFFECT */
-.tilt {
-  transition: transform 0.3s ease;
-}
-.tilt:hover {
-  transform: perspective(1000px) rotateX(2deg) rotateY(2deg);
-}
-
-/* OPTIONAL GRADIENT BORDERS */
-.pricing-card {
-  border: 2px solid transparent;
-  background-clip: padding-box;
-  position: relative;
-  border-radius: 12px;
-}
-.pricing-card.highlight {
-  border-image: linear-gradient(to right, #00c853, #b2ff59) 1;
-}
-
-
-    /* SHOWCASE */
-    /* .showcase-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-      margin-top: 2rem;
-    }
-
-    .showcase-card {
-      background: #fff;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .showcase-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    }
-
-    .showcase-card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
-
-    .showcase-card .content {
-      padding: 20px;
-      text-align: left;
-    }
-
-    .showcase-card h3 {
+    section p {
       font-size: 1.1rem;
-      margin-bottom: 10px;
-      color: #111;
+      line-height: 1.8;
+      color: #cccccc;
+      max-width: 700px;
     }
-
-    .showcase-card p {
-      font-size: 0.9rem;
-      color: #666;
-    } */
-
-    footer {
-      text-align: center;
-      padding: 40px 20px;
-      background: #111;
-      color: #fff;
-      font-size: 0.9rem;
+    section img {
+      width: 300px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      position: absolute;
+      right: 40px;
+      top: 50%;
+      transform: translateY(-50%);
     }
-
-    /* ANIMATIONS */
-    @keyframes slideDown {
-      0% { opacity: 0; transform: translateY(-40px); }
-      100% { opacity: 1; transform: translateY(0); }
+    section:nth-child(even) {
+      background: #181818;
+      border-radius: 20px;
     }
-
-    @keyframes fadeIn {
-      0% { opacity: 0; }
-      100% { opacity: 1; }
-    }
-
-    /* RESPONSIVE */
     @media (max-width: 768px) {
       .hero h1 {
-        font-size: 2rem;
+        font-size: 2.5rem;
       }
-
-      .service-card {
-        width: 90%;
+      section {
+        padding: 60px 20px;
+      }
+      section img {
+        position: static;
+        display: block;
+        margin: 20px auto 0;
+        transform: none;
       }
     }
   </style>
 </head>
 <body>
+  <header class="hero">
+    <h1>Design & Experience</h1>
+    <p>Bringing visual magic to life — one pixel at a time.</p>
+  </header>
 
-  <!-- PROMO BANNER -->
-  <div class="banner">
-    💡 Special Offer: Complete digital setup starting at just $99! Limited time only.
-  </div>
-
-  <!-- NAV -->
-  <nav>
-    <a href="#design">Design</a>
-    <a href="#development">Development</a>
-    <a href="#pricing">Pricing</a>
-    <a href="#showcase">Showcase</a>
+  <nav class="sub-nav">
+    <a href="#uiux">UI/UX</a>
+    <a href="#social">Social Media</a>
+    <a href="#branding">Branding</a>
+    <a href="#logo">Logo Design</a>
+    <a href="#poster">Poster Design</a>
   </nav>
 
-  <!-- HERO -->
-  <!-- HERO -->
-<section class="hero">
-  <h1>We Design, Build & Inspire</h1>
-  <p>From concept to launch, we turn your ideas into digital experiences that connect, captivate, and convert.</p>
-  <p class="price-note">
-    All-in-one services starting at just 
-    <strong style="color: #000;  padding: 4px 10px; border-radius: 6px; font-size:25px;">
-      $79 AUD
-    </strong>.
-  </p>
-  <a href="#pricing" class="cta">See Pricing Plans</a>
-</section>
+  <main>
+    <section id="uiux" class="section">
+      <h2>UI/UX</h2>
+      <p>Designs that feel like second nature. We craft intuitive, user-centered interfaces that flow seamlessly and delight every click.</p>
+      <img src="../assests/printme.png" alt="UI/UX Design">
+    </section>
 
+    <section id="social" class="section">
+      <h2>Social Media</h2>
+      <p>Elevate your brand's voice with jaw-dropping visuals, scroll-stopping stories, and consistent content design that hooks attention.</p>
+      <img src="https://source.unsplash.com/600x400/?social,media,design" alt="Social Media Design">
+    </section>
 
-  <!-- DESIGN SECTION -->
-  <section id="design">
-    <h2>🎨 Design Services</h2>
-    <div class="services">
-      <div class="service-card">
-        <i class="fas fa-pencil-ruler"></i>
-        <h3>UI/UX Design</h3>
-        <p>Crafting intuitive user journeys that engage and convert.</p>
-      </div>
-      <div class="service-card">
-        <i class="fab fa-instagram"></i>
-        <h3>Social Media Design</h3>
-        <p>Thumb-stopping content tailored for your brand voice.</p>
-      </div>
-      <div class="service-card">
-        <i class="fas fa-bullseye"></i>
-        <h3>Branding</h3>
-        <p>From logo to tone — build a brand that leaves a mark.</p>
-      </div>
-      <div class="service-card">
-        <i class="fas fa-video"></i>
-        <h3>Social Videos</h3>
-        <p>Engaging reels, shorts, and animations for social growth.</p>
-      </div>
-    </div>
-  </section>
+    <section id="branding" class="section">
+      <h2>Branding</h2>
+      <p>Your brand’s personality — defined. From strategic positioning to cohesive visual language, we build brands that stand for something.</p>
+      <img src="https://source.unsplash.com/600x400/?branding,identity" alt="Branding Work">
+    </section>
 
-  <!-- DEVELOPMENT SECTION -->
-  <section id="development">
-    <h2>💻 Development Services</h2>
-    <div class="services">
-      <div class="service-card">
-        <i class="fab fa-wordpress-simple"></i>
-        <h3>No-Code Sites</h3>
-        <p>Rapid Wix, WordPress & Shopify builds that work beautifully.</p>
-      </div>
-      <div class="service-card">
-        <i class="fas fa-code"></i>
-        <h3>Custom Web Apps</h3>
-        <p>From React to Python — we code ideas into products.</p>
-      </div>
-      <div class="service-card">
-        <i class="fas fa-mobile-alt"></i>
-        <h3>Responsive Design</h3>
-        <p>Your site, pixel-perfect on all devices and screens.</p>
-      </div>
-      <div class="service-card">
-        <i class="fas fa-rocket"></i>
-        <h3>Speed Optimization</h3>
-        <p>Blazing fast performance, SEO-ready and reliable.</p>
-      </div>
-    </div>
-  </section>
+    <section id="logo" class="section">
+      <h2>Logo Design</h2>
+      <p>One mark, endless meaning. We create logos that are instantly memorable and uniquely you — minimal, clever, bold, and iconic.</p>
+      <img src="https://source.unsplash.com/600x400/?logo,design" alt="Logo Design">
+    </section>
 
+    <section id="poster" class="section">
+      <h2>Poster Design</h2>
+      <p>Big, bold, and brilliant. From events to promos, we design posters that don’t just sit pretty — they speak loud and clear.</p>
+      <img src="https://source.unsplash.com/600x400/?poster,graphic,design" alt="Poster Design">
+    </section>
+  </main>
 
-<!-- PRICING SECTION -->
-<section class="pricing-modern" id="pricing">
-  <h2 class="pricing-title">Choose Your Perfect Plan</h2>
-  <p class="pricing-subtitle">Simple pricing. No hidden fees. Unlimited possibilities.</p>
-
-  <div class="pricing-cards">
-    <!-- STARTER PLAN -->
-    <div class="pricing-card tilt">
-      <div class="badge">Basic</div>
-      <div class="card-inner">
-        <div class="card-front">
-          <h3>Starter</h3>
-          <p class="price">$49</p>
-          <ul>
-            <li>🌐 1 Page Design</li>
-            <li>📞 Basic Support</li>
-            <li>📱 Responsive Layout</li>
-          </ul>
-          <span class="flip-note">Hover for details</span>
-        </div>
-        <div class="card-back">
-          <p>Great for individuals or freelancers who need a basic web presence.</p>
-          <a href="#contact" class="cta">Get Started</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- PRO PLAN -->
-    <div class="pricing-card tilt highlight">
-      <div class="badge popular">Most Popular</div>
-      <div class="card-inner">
-        <div class="card-front">
-          <h3>Pro</h3>
-          <p class="price">$99</p>
-          <ul>
-            <li>📄 Up to 5 Pages</li>
-            <li>🔍 SEO Optimized</li>
-            <li>⚡ Priority Support</li>
-          </ul>
-          <span class="flip-note">Hover for details</span>
-        </div>
-        <div class="card-back">
-          <p>Perfect for small businesses looking to grow online quickly and professionally.</p>
-          <a href="#contact" class="cta">Choose Pro</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- ENTERPRISE PLAN -->
-    <div class="pricing-card tilt">
-      <div class="badge">Premium</div>
-      <div class="card-inner">
-        <div class="card-front">
-          <h3>Enterprise</h3>
-          <p class="price">$199</p>
-          <ul>
-            <li>♾️ Unlimited Pages</li>
-            <li>🛒 eCommerce Ready</li>
-            <li>🛠️ Custom Features</li>
-          </ul>
-          <span class="flip-note">Hover for details</span>
-        </div>
-        <div class="card-back">
-          <p>Ideal for enterprises needing full customization and powerful integrations.</p>
-          <a href="#contact" class="cta">Let’s Talk</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-  <!-- SHOWCASE SECTION -->
-  <!-- <section id="showcase">
-    <h2>📸 Work Showcase</h2>
-    <div class="showcase-container">
-      <div class="showcase-card">
-        <img src="../assests/mct.png" alt="Project 1">
-        <div class="content">
-          <h3>Project One</h3>
-          <p>A sleek landing page for a SaaS startup.</p>
-        </div>
-      </div>
-      <div class="showcase-card">
-        <img src="../assests/printme.png" alt="Project 2">
-        <div class="content">
-          <h3>Project Two</h3>
-          <p>Social media campaign visuals and stories.</p>
-        </div>
-      </div>
-      <div class="showcase-card">
-        <img src="https://via.placeholder.com/600x400?text=Project+3" alt="Project 3">
-        <div class="content">
-          <h3>Project Three</h3>
-          <p>Branding overhaul for a digital agency.</p>
-        </div>
-      </div>
-    </div>
-  </section> -->
-
-  <!-- FOOTER -->
-  <footer>
-    &copy; 2025 Creative Studio. All rights reserved.
-  </footer>
-
+  <script>
+    const sections = document.querySelectorAll(".section");
+    window.addEventListener("scroll", () => {
+      sections.forEach((sec) => {
+        const top = sec.getBoundingClientRect().top;
+        const winH = window.innerHeight;
+        if (top < winH - 100) {
+          sec.classList.add("active");
+        }
+      });
+    });
+  </script>
 </body>
 </html>

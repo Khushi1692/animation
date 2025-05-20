@@ -12,31 +12,66 @@
   />
 </head>
 <body>
-    <nav class="navbar slide-from-top">
-        <div class="logo">
-          <a href="../index.html"><img src="../assests/logo.png" alt="Logo" /></a>
+   <nav class="navbar slide-from-top">
+    <div class="logo">
+      <a href="../index.html"><img src="../assests/logo.png" alt="Logo" /></a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      
+      
+      <!-- Multi-level Services Dropdown -->
+    <ul class="nav">
+      <li class="services-menu">
+        <a href="../service/service.html" class="ser-link">Services <i class="fas fa-chevron-down"></i></a>
+        
+        <div class="mega-menu">
+          <div class="menu-column">
+            <a href="/design-experience" class="menu-heading">Design & Experience</a>
+            <a href="/design-experience#uiux">UI/UX</a>
+            <a href="/design-experience#social">Social Media</a>
+            <a href="/design-experience#branding">Branding</a>
+            <a href="/design-experience#logo">Logo Design</a>
+            <a href="/design-experience#poster">Poster Design</a>
+          </div>
+          <div class="menu-column">
+            <a href="/code-build" class="menu-heading">Code & Build</a>
+            <a href="/code-build#wordpress">Wordpress</a>
+            <a href="/code-build#wix">Wix</a>
+            <a href="/code-build#shopify">Shopify</a>
+            <a href="/code-build#react">React</a>
+          </div>
+          <div class="menu-column">
+            <a href="/fix-optimize" class="menu-heading">Fix & Optimize</a>
+            <a href="/fix-optimize#speed">Speed Optimization</a>
+            <a href="/fix-optimize#responsive">Responsive Fixes</a>
+            <a href="/fix-optimize#errors">Console Errors</a>
+          </div>
         </div>
-        <ul class="nav-links">
-          <li><a href="about.html">about</a></li>
-          <li><a href="../portfolio/portfolio.html">portfolio</a></li>
-          <li><a href="../contact/contact.html">contact</a></li>
-        </ul>
-        <div class="social-icons">
-          <a href="#"><i class="fab fa-x-twitter"></i></a>
-          <a href="https://www.linkedin.com/in/chatrolamit047/"><i class="fab fa-linkedin-in"></i></a>
-          <a href="https://www.instagram.com/walk.err.047"><i class="fab fa-instagram"></i></a>
-        </div>
-        <button class="menu-toggle" aria-label="Toggle menu">
-          <i class="fas fa-bars"></i>
-        </button>
-      </nav>
+      </li>
+    </ul>
+
+      <li><a href="../contact/contact.html">Contact Us</a></li>
+     
+    </ul>
+
+    <div class="main-social-icons">
+      <a href="#"><i class="fab fa-x-twitter"></i></a>
+      <a href="https://www.linkedin.com/in/chatrolamit047/"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://www.instagram.com/walk.err.047"><i class="fab fa-instagram"></i></a>
+    </div>
+
+    <button class="menu-toggle" aria-label="Toggle menu">
+      <i class="fas fa-bars"></i>
+    </button>
+  </nav>
        <!-- Overlay -->
       <div class="overlay" id="overlay"></div>
 
       <!-- Mobile Menu -->
       <div class="mobile-menu" id="mobileMenu">
         <ul class="mobile-nav-links">
-          <li><a href="../about/about.html"><i class="fas fa-user"></i> about</a></li>
+          <li><a href="about.html"><i class="fas fa-user"></i> about</a></li>
           <li><a href="../portfolio/portfolio.html"><i class="fas fa-briefcase"></i> portfolio</a></li>
           <li><a href="../contact/contact.html"><i class="fas fa-envelope"></i> contact</a></li>
         </ul>
@@ -76,7 +111,7 @@
                   <div class="coder anim-from-right ">
                       <h2>Part coder</h2>
                       <ul class="ul">
-                          <li>Front-end development</li>
+                          <li>React</li>
                           <li>Python</li>
                           <li>Shopify</li>
                           <li>Wordpress</li>

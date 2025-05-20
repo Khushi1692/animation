@@ -5,6 +5,7 @@ body {
   background-color: #fff;
 }
 
+/* Navbar */
 .navbar {
   display: flex;
   align-items: center;
@@ -12,6 +13,8 @@ body {
   background-color: #111;
   padding: 10px 30px;
   color: white;
+  position: relative;
+  z-index: 10;
 }
 
 .logo img {
@@ -21,6 +24,7 @@ body {
   background-color: white;
 }
 
+/* Desktop Nav Links */
 .nav-links {
   list-style: none;
   display: flex;
@@ -40,16 +44,106 @@ body {
   color: #999;
 }
 
-.social-icons a {
+.main-social-icons {
+  display: flex;
+  align-items: center;
+}
+
+.main-social-icons a {
   color: white;
   margin-left: 30px;
   font-size: 25px;
   transition: color 0.3s ease;
 }
 
-.social-icons a:hover {
+.main-social-icons a:hover {
   color: #999;
 }
+
+/* Dropdown Container */
+.dropdown {
+  position: relative;
+}
+
+/* Container for the nav item */
+.services-menu {
+  position: relative;
+}
+
+/* Nav link styling */
+.ser-link {
+  display: inline-block;
+  padding: 0px 15px;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Mega menu styling */
+.mega-menu {
+  position: absolute;
+  top: 100%; /* directly below the nav link */
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1f1f1f;
+  padding: 25px 30px;
+  display: flex;
+  gap: 40px;
+  z-index: 999;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  min-width: 700px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+/* Show mega menu on hover of the entire services-menu */
+.services-menu:hover .mega-menu,
+.services-menu:focus-within .mega-menu {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Column in mega menu */
+.menu-column {
+  display: flex;
+  flex-direction: column;
+  min-width: 180px;
+}
+
+/* Heading in each column */
+.menu-heading {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 12px;
+  text-decoration: none;
+  border-bottom: 2px solid #0077ff;
+  padding-bottom: 10px;
+}
+
+/* Sub-links */
+.menu-column a {
+  color: #e5e5e5;
+  text-decoration: none;
+  margin: 6px 0;
+  font-size: 14px;
+  transition: color 0.2s ease, padding-left 0.2s ease;
+}
+
+.menu-column a:hover {
+  color: #ffffff;
+  padding-left: 6px;
+}
+
+/* Optional: nav container for layout */
+.nav {
+  list-style: none;
+  display: flex;
+  background: #111;
+  padding: 0;
+  margin: 0;
+}
+
 
 .container {
   width: 100%;
