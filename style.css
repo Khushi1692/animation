@@ -123,7 +123,7 @@ html, body {
   font-size: 16px;
   margin-bottom: 12px;
   text-decoration: none;
-  border-bottom: 2px solid #00c853;
+  border-bottom: 2px solid #0077ff;
   padding-bottom: 10px;
 }
 
@@ -462,7 +462,7 @@ html, body {
 
 /* Highlighted card */
 .client-card.highlight {
-  background: linear-gradient(135deg, #d1eaff, #ffffff);
+  background: linear-gradient(135deg, #0077ff, #ffffff);
   border: 2px solid #0077ff;
 }
 
