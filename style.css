@@ -71,60 +71,83 @@ html, body {
   position: relative;
 }
 
-/* Mega Menu */
-.mega-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #000;
-  color: #fff;
-  padding: 30px;
-  width: 100vw;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-  flex-wrap: wrap;
-  gap: 40px;
-}
-
-/* Show Mega Menu on Hover */
-.dropdown:hover .mega-menu {
-  display: flex;
-}
-
-/* Mega Menu Columns */
-.mega-menu .column {
-  min-width: 180px;
-}
-
-/* Headings in Mega Menu */
-.mega-menu h4 {
-  font-size: 16px;
-  color: #fce93c;
-  margin-bottom: 8px;
+/* Container for the nav item */
+.services-menu {
   position: relative;
 }
 
-.mega-menu h4::after {
-  content: "";
-  display: block;
-  width: 30px;
-  height: 2px;
-  background: #fce93c;
-  margin-top: 4px;
-}
-
-.mega-menu a {
-  display: block;
-  padding: 4px 0;
+/* Nav link styling */
+.ser-link {
+  display: inline-block;
+  padding: 0px 15px;
   color: #fff;
-  font-size: 14px;
   text-decoration: none;
-  transition: color 0.3s ease;
 }
 
-.mega-menu a:hover {
-  color: #fce93c;
+/* Mega menu styling */
+.mega-menu {
+  position: absolute;
+  top: 100%; /* directly below the nav link */
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1f1f1f;
+  padding: 25px 30px;
+  display: flex;
+  gap: 40px;
+  z-index: 999;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  min-width: 700px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+/* Show mega menu on hover of the entire services-menu */
+.services-menu:hover .mega-menu,
+.services-menu:focus-within .mega-menu {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Column in mega menu */
+.menu-column {
+  display: flex;
+  flex-direction: column;
+  min-width: 180px;
+}
+
+/* Heading in each column */
+.menu-heading {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 12px;
+  text-decoration: none;
+  border-bottom: 2px solid #00c853;
+  padding-bottom: 10px;
+}
+
+/* Sub-links */
+.menu-column a {
+  color: #e5e5e5;
+  text-decoration: none;
+  margin: 6px 0;
+  font-size: 14px;
+  transition: color 0.2s ease, padding-left 0.2s ease;
+}
+
+.menu-column a:hover {
+  color: #ffffff;
+  padding-left: 6px;
+}
+
+/* Optional: nav container for layout */
+.nav {
+  list-style: none;
+  display: flex;
+  background: #111;
+  padding: 0;
+  margin: 0;
 }
 
 /* Face Section */
@@ -326,6 +349,265 @@ html, body {
   opacity: 1;
   visibility: visible;
 }
+.mobile-submenu-toggle {
+  display: none; /* Hidden on desktop */
+  cursor: pointer;
+  margin-left: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  user-select: none;
+}
+/* ===== Clients Section ===== */
+.client-cards {
+  background: linear-gradient(135deg, #f0f4ff, #e0f7fa);
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.client-title {
+  font-size: 36px;
+  margin-bottom: 50px;
+  font-weight: 700;
+  color: #333;
+  position: relative;
+}
+
+.client-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #0077ff;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+/* Client Card Base */
+.client-card {
+  position: relative;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  padding: 30px 20px;
+  width: 220px;
+  opacity: 0;              /* start hidden for fade-in */
+  transform: translateY(20px);
+  transition: transform 0.3s, box-shadow 0.3s;
+  z-index: 1;
+  overflow: hidden;
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Staggered animation delays */
+.client-card:nth-child(1) { animation-delay: 0.2s; }
+.client-card:nth-child(2) { animation-delay: 0.4s; }
+.client-card:nth-child(3) { animation-delay: 0.6s; }
+.client-card:nth-child(4) { animation-delay: 0.8s; }
+.client-card:nth-child(5) { animation-delay: 1.0s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tilt hover glow */
+.client-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Logo/avatar above text */
+.client-logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-bottom: 12px;
+  object-fit: cover;
+  border: 2px solid #ddd;
+}
+
+/* Testimonial text */
+.client-card p {
+  font-size: 16px;
+  font-style: italic;
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.client-card h4 {
+  font-weight: 600;
+  color: #222;
+  margin: 0;
+}
+
+/* Accent background blob */
+.client-card::before {
+  content: '';
+  position: absolute;
+  top: -20px; left: -20px;
+  width: 120px; height: 120px;
+  background: radial-gradient(circle, rgba(0,123,255,0.2), transparent);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+/* Highlighted card */
+.client-card.highlight {
+  background: linear-gradient(135deg, #d1eaff, #ffffff);
+  border: 2px solid #0077ff;
+}
+
+/* CTA below the cards */
+.cta-next {
+  margin-top: 40px;
+}
+
+.cta-next p {
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.btn-cta {
+  display: inline-block;
+  padding: 12px 30px;
+  background: #0077ff;
+  color: #fff;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.btn-cta:hover {
+  background: #005fcc;
+}
+
+.site-footer {
+  font-family: sans-serif;
+  color: #111;
+  background: #f5f5f5;
+}
+
+/* Top Section: Brand + Nav + CTA */
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 60px 5%;
+  gap: 40px;
+}
+
+/* Brand/Logo */
+.footer-brand .logo-normal {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+}
+.footer-brand  {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #111;
+}
+.footer-brand a {
+  text-decoration: none;
+  color: inherit;    /* keep it from changing color on hover */
+}
+
+/* if you want to remove the underline on hover too: */
+.footer-brand a:hover {
+  text-decoration: none;
+}
+/* Nav Columns */
+.footer-nav {
+  display: flex;
+  gap: 60px;
+}
+.footer-col h4 {
+  margin-bottom: 16px;
+  font-size: 1.125rem;
+  color: #222;
+}
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-col li {
+  margin-bottom: 8px;
+}
+.footer-col a {
+  text-decoration: none;
+  color: #555;
+  transition: color 0.2s;
+}
+.footer-col a:hover {
+  color: #000;
+}
+
+/* CTA + Social */
+.footer-cta {
+  max-width: 280px;
+  text-align: left;
+}
+.footer-cta h4 {
+  font-size: 1.25rem;
+  margin-bottom: 16px;
+  color: #111;
+  line-height: 1.4;
+}
+.footer-cta .highlight {
+  color: #111;
+}
+.btn-contact {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 10px 24px;
+  background: #111;
+  color: #fff;
+  border-radius: 24px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.btn-contact:hover {
+  background: #0f0e0f;
+}
+
+/* Social Icons */
+.social-icons a {
+  margin-right: 12px;
+  color: #333;
+  text-decoration: none;
+  font-size: 1.125rem;
+  transition: color 0.2s;
+}
+.social-icons a:hover {
+  color: #111;
+}
+
+/* Bottom Copyright Bar */
+.footer-bottom {
+  background: #111;
+  color: #fff;
+  text-align: center;
+  padding: 16px 5%;
+}
+.footer-bottom a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+
 
 /* Responsive Behavior */
 @media (max-width: 992px) {
@@ -337,4 +619,25 @@ html, body {
   .social-icons {
     display: none;
   }
+   .card-grid {
+    gap: 20px;
+  }
+  .client-card {
+    width: 180px;
+  }
+   .footer-top {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .footer-nav {
+    flex-direction: column;
+    gap: 32px;
+  }
+  .footer-cta {
+    text-align: center;
+  }
+ 
 }
+
+

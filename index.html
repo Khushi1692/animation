@@ -18,39 +18,42 @@
       <a href="index.html"><img src="assests/logo.png" alt="Logo" /></a>
     </div>
     <ul class="nav-links">
-      <li><a href="about/about.html">about</a></li>
-      <li><a href="portfolio/portfolio.html">portfolio</a></li>
+      <li><a href="about/about.html">About</a></li>
+      <li><a href="portfolio/portfolio.html">Portfolio</a></li>
       
       <!-- Multi-level Services Dropdown -->
-      <li class="dropdown">
-        <a href="#">Services <i class="fas fa-angle-down"></i></a>
-        <div class="mega-menu">
-          <div class="column">
-            <h4>Design & Experience</h4>
-            <a href="#">UI UX</a>
-            <a href="#">Social Media Post</a>
-            <a href="#">Branding</a>
-            <a href="#">Logo Designing</a>
-            <a href="#">Social Video Creation</a>
-          </div>
-          <div class="column">
-            <h4>Code & Build</h4>
-            <a href="#">Wix</a>
-            <a href="#">WordPress</a>
-            <a href="#">Shopify</a>
-            <a href="#">React</a>
-            <a href="#">HTML CSS JS</a>
-          </div>
-          
-          <div class="column">
-            <h4>Bug Fixing</h4> 
-          </div>
-        </div>
-      </li>
+     <ul class="nav">
+  <li class="services-menu">
+    <a href="service/service.html" class="ser-link">Services <i class="fas fa-chevron-down"></i></a>
+    
+    <div class="mega-menu">
+      <div class="menu-column">
+        <a href="/design-experience" class="menu-heading">Design & Experience</a>
+        <a href="/design-experience#uiux">UI/UX</a>
+        <a href="/design-experience#social">Social Media</a>
+        <a href="/design-experience#branding">Branding</a>
+        <a href="/design-experience#logo">Logo Design</a>
+        <a href="/design-experience#poster">Poster Design</a>
+      </div>
+      <div class="menu-column">
+        <a href="/code-build" class="menu-heading">Code & Build</a>
+        <a href="/code-build#wordpress">Wordpress</a>
+        <a href="/code-build#wix">Wix</a>
+        <a href="/code-build#shopify">Shopify</a>
+        <a href="/code-build#react">React</a>
+      </div>
+      <div class="menu-column">
+        <a href="/fix-optimize" class="menu-heading">Fix & Optimize</a>
+        <a href="/fix-optimize#speed">Speed Optimization</a>
+        <a href="/fix-optimize#responsive">Responsive Fixes</a>
+        <a href="/fix-optimize#errors">Console Errors</a>
+      </div>
+    </div>
+  </li>
+</ul>
 
-      <li><a href="contact/contact.html">contact</a></li>
-      <!-- <li><a href="service/service.html">Service</a></li> -->
-      <li><a href="service/demo.html">Demo</a></li>
+      <li><a href="contact/contact.html">Contact Us</a></li>
+     
     </ul>
 
     <div class="social-icons">
@@ -69,6 +72,10 @@
     <ul class="mobile-nav-links">
       <li><a href="about/about.html"><i class="fas fa-user"></i> about</a></li>
       <li><a href="portfolio/portfolio.html"><i class="fas fa-briefcase"></i> portfolio</a></li>
+      <!-- <li><a href="portfolio/service.html"><i class="fas fa-briefcase"></i> service</a></li> -->
+      
+
+       
       <li><a href="contact/contact.html"><i class="fas fa-envelope"></i> contact</a></li>
     </ul>
     <button class="close-menu" aria-label="Close menu">&times;</button>
@@ -102,6 +109,91 @@
         </div>
       </div>
     </section>
+   <!-- Place this where you want the Clients section in your page -->
+<section class="client-cards">
+  <h2 class="client-title">Clients 💼</h2>
+  <div class="card-grid">
+    <div class="client-card" data-tilt data-tilt-max="10" data-tilt-speed="400">
+      <img class="client-logo" src="assests/logo.png" alt="Client A logo">
+      <p>“🚀 Great collaboration!”</p>
+      <h4>Client A</h4>
+    </div>
+    <div class="client-card" data-tilt data-tilt-max="10" data-tilt-speed="400">
+      <img class="client-logo" src="assets/client2-logo.png" alt="Client B logo">
+      <p>“🎨 Creative and professional.”</p>
+      <h4>Client B</h4>
+    </div>
+    <div class="client-card highlight" data-tilt data-tilt-max="10" data-tilt-speed="400">
+      <img class="client-logo" src="assets/client3-logo.png" alt="Client C logo">
+      <p>“🌟 Exceeded expectations.”</p>
+      <h4>Client C</h4>
+    </div>
+    <div class="client-card" data-tilt data-tilt-max="10" data-tilt-speed="400">
+      <img class="client-logo" src="assets/client4-logo.png" alt="Client D logo">
+      <p>“⚡ Fast turnaround!”</p>
+      <h4>Client D</h4>
+    </div>
+    <div class="client-card" data-tilt data-tilt-max="10" data-tilt-speed="400">
+      <img class="client-logo" src="assets/client5-logo.png" alt="Client E logo">
+      <p>“💡 Loved the design!”</p>
+      <h4>Client E</h4>
+    </div>
+  </div>
+
+  <div class="cta-next">
+    <p>Want to see your name here?</p>
+    <a href="contact/contact.html" class="btn-cta">Become Our Next Client</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="index.html">
+        <span class="logo-normal">CodeCrest</span>
+      </a>
+    </div>
+    <nav class="footer-nav">
+      <div class="footer-col">
+        <h4>Design</h4>
+        <ul>
+        <li> <a href="/design-experience#uiux">UI/UX</a> </li>
+        <li><a href="/design-experience#social">Social Media</a></li>
+        <li><a href="/design-experience#branding">Branding</a></li>
+        <li><a href="/design-experience#logo">Logo Design</a></li>
+        <li><a href="/design-experience#poster">Poster Design</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company Information</h4>
+        <ul>
+          <li><a href="about/about.html">About Us</a></li>
+          <li><a href="service/service.html">Service</a></li>
+          <li><a href="contact/contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="footer-cta">
+      <h4>Transform your Business with <span class="highlight">Data</span></h4>
+      <a href="/contact" class="btn-contact">Contact Us</a>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-x-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>Copy Right © 2025 CodeCrest | <a href="/privacy">Privacy Policy</a></p>
+  </div>
+</footer>
+
+
+<!-- Include vanilla-tilt at the end of body -->
+<script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
+<!-- No additional init script needed—data-tilt attributes auto‑initialize -->
+
   </div>
 </body>
 <script src="index.js"></script>
